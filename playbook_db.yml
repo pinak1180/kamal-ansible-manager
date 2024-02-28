@@ -50,16 +50,29 @@
         rule: "{{ item.rule }}"
         port: "{{ item.port }}"
         proto: "{{ item.proto }}"
+        src: "{{ item.src }}"
       loop:
         - rule: 'limit'
           port: '22'
           proto: 'tcp'
+          src: 'any'
         - rule: 'deny'
           port: '80'
           proto: 'tcp'
+          src: 'any'
         - rule: 'deny'
           port: '443'
           proto: 'tcp'
+          src: 'any'
+        - rule: 'allow'
+          port: '5432'
+          proto: 'tcp'
+          src: '10.0.0.2'
+        - rule: 'allow'
+          port: '5432'
+          proto: 'tcp'
+          src: '10.0.0.3'
+
 
     - name: Enable ufw
       ufw:

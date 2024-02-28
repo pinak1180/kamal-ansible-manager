@@ -14,7 +14,7 @@ It will automatically update your packages and configure these packages to secur
 
 Copy the inventory example file:
 ```bash
-$ cp hosts.ini.example hosts.ini
+$ cp hosts.ini hosts.ini
 ```
 
 Update the `<your-ip-address>` with your server's IP (you can have multiple servers):

@@ -60,6 +60,14 @@
         - rule: 'deny'
           port: '443'
           proto: 'tcp'
+        - rule: 'allow'
+          port: '6379'
+          proto: 'tcp'
+          src: '10.0.0.2'
+        - rule: 'allow'
+          port: '6379'
+          proto: 'tcp'
+          src: '10.0.0.3'
 
     - name: Enable ufw
       ufw:
